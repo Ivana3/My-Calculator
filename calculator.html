@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title> Calculator </title>
+<style>
+input[type="button"]
+{
+font-size: 24px;
+width: 100%;
+border-radius: 6px;
+cursor: pointer;
+background-color: #ccffff;
+}
+input[type="text"]
+{
+font-size: 24px;
+text-align: right;
+border-radius: 2px;
+}
+table {
+margin-left: auto;
+margin-right: auto;
+}
+</style>
+</head>
+<body>
+<br>
+<br>
+<br>
+<h2 style="text-align:center; color:#ccffff; text-shadow:2px 2px black; font-size:28px"> JavaScript Calculator </h2>
+<br>
+<table border="3">
+<tr>
+<td><input type="button" value="C" onclick="clr()"/> </td>
+<td colspan="3"><input type="text" id="cal"/> </td>
+</tr>
+<tr>
+<td><input type="button" value="+" onclick="dis('+')"/> </td>
+<td><input type="button" value="1" onclick="dis('1')"/> </td>
+<td><input type="button" value="2" onclick="dis('2')"/> </td>
+<td><input type="button" value="3" onclick="dis('3')"/> </td>
+</tr>
+<tr>
+<td><input type="button" value="-" onclick="dis('-')"/> </td>
+<td><input type="button" value="4" onclick="dis('4')"/> </td>
+<td><input type="button" value="5" onclick="dis('5')"/> </td>
+<td><input type="button" value="6" onclick="dis('6')"/> </td>
+</tr>
+<tr>
+<td><input type="button" value="*" onclick="dis('*')"/> </td>
+<td><input type="button" value="7" onclick="dis('7')"/> </td>
+<td><input type="button" value="8" onclick="dis('8')"/> </td>
+<td><input type="button" value="9" onclick="dis('9')"/> </td>
+</tr>
+<tr>
+<td><input type="button" value="/" onclick="dis('/')"/> </td>
+<td><input type="button" value="." onclick="dis('.')"/> </td>
+<td><input type="button" value="0" onclick="dis('0')"/> </td>
+<td><input type="button" value="=" onclick="solve()"/> </td>
+</tr>
+</table>
+<script>
+function dis(val) // function for displaying values
+{
+document.getElementById("cal").value+=val;
+}
+function solve() // function for evaluation
+{
+let x = document.getElementById("cal").value;
+let y = eval(x);
+document.getElementById("cal").value = y;
+}
+function clr() // function for clearing the display
+{
+document.getElementById("cal").value = "";
+}
+</script>
+</body>
+</html>
